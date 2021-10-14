@@ -1,0 +1,15 @@
+if __name__ == '__main__':
+    namelist = []
+    second = []
+    for _ in range(int(input())):
+        name = input()
+        score = float(input())
+        namelist.append([name,score])
+    namelist.sort()
+    namelist = sorted(namelist, key=lambda xx:xx[1])
+    
+    from_second = [x for x in namelist if x[1] != namelist[0][1]]
+    only_second = [y for y in from_second if y[1] == from_second[0][1]]
+    
+    for second_name in range(len(only_second)):
+        print(only_second[second_name][0])
