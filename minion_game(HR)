@@ -1,0 +1,36 @@
+def minion_game(string):
+    
+    p1,p2 = "Kevin","Stuart"
+    p1scr,p2scr = 0,0
+    vowels = ["A","E","I","O","U"]
+    
+    for x in range(len(string)):
+        if string[x] in vowels:
+            p1scr += (len(string)-x)
+        else:
+            p2scr += (len(string)-x)
+    
+    if p1scr > p2scr:
+        print(f"{p1} {p1scr}")
+    elif p1scr < p2scr:
+        print(f"{p2} {p2scr}")
+    else:
+        print("Draw")
+
+if __name__ == '__main__':
+    s = input()
+    minion_game(s)
+    
+### RULE : for the given string, p1 and p2 make substrings in the string.
+###        p1's word should starts with vowels. p2 with consonants. allowed vowels are in the code above
+###        scoring depends on how many substrings occured in the string
+
+### string = BANANA
+### Kevin's possible substrings are = A, AN, ANA, ANAN, ANANA == 3,2,2,1,1 == 9
+### Stuart's possible substrings are = B, BA, BAN, BANA, BANAN, BANANA, N, NA, NAN, NANA, NANA == 1, 1, 1, 1, 1, 1, 2, 2, 1, 1 == 12
+
+### for x in range(len(string)) to determine the index of x
+### index x(vowel) = 1, 3, 5
+### index x(consonant) = 0, 2, 4
+### Kevin's score + (len(string) - x) == 9
+### Stuart's score + (len(string) - x) == 12
