@@ -1,0 +1,30 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the solve function below.
+def solve(s):
+    
+    ss = s.split(" ")
+    return " ".join(bb.capitalize() for bb in ss)
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    result = solve(s)
+
+    fptr.write(result + '\n')
+
+    fptr.close()
+
+## it's probably not a bug, just out of my league to determine the issue.
+## if print(" ".join(bb.capitalize() for bb in ss)) is used instead of return, there goes an type error from pre-written code which i'm unable to edit.
+## for some reason line 22 fptr.write(result + '\n') cannot operate with string type.
+## requires a further research
+
