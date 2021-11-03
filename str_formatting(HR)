@@ -1,0 +1,13 @@
+def print_formatted(number):
+    
+    wd = len(bin(number)[2:])
+    
+    for number in range(1,n+1):
+        print(str(number).rjust(wd," "), str(oct(number))[2:].rjust(wd," "), str(hex(number).upper())[2:].rjust(wd," "), str(bin(number))[2:].rjust(wd," "))
+
+if __name__ == '__main__':
+    n = int(input())
+    print_formatted(n)
+    
+    ## new string method learned = Binary, Hex, Octal and .rjust()
+    ## .rjust = justified right alignment after length of data type
