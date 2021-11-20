@@ -1,0 +1,14 @@
+from itertools import groupby
+
+x = str(input())
+for k,g in groupby(x):
+    print((len(list(g)),int(k)),end=" ")
+    
+    
+## groupby is hard to use at first time. still don't know what's going on exactly.
+## uses a for loop with 2 variables which are k(unique key) and g(groups)
+## if the same alphanumeric occurs, they're grouped in a list
+## example given is '1222311' and it's grouped by ['1']['2','2','2']['3','3']['1']
+## len(list(g)) provides each list by length
+## print the tuple with len(list(g)),int(k) outputs (1, 1), (3, 2), (1, 3), (2, 1) vertically
+## added end=" " to prevent the print function automatically seperates the line
